@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import Button from './Button';
 
 export default {
@@ -6,4 +6,6 @@ export default {
     component: Button,
 };
 
-export const Default: FC = () => <Button onClick={() => alert('Clicked')} onMouseOver={() => alert('Hovered')} />;
+export const Default: FC = () => <Button />;
+
+export const Disabled: FC = () => <Button disabled />;

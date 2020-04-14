@@ -1,10 +1,14 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import Button from './Button';
-import { action } from '@storybook/addon-actions';
 
 export default {
     title: 'Button',
     component: Button,
+    parameters: {
+        notes: 'A button that can be disabled',
+    },
 };
 
-export const Default: FC = () => <Button onClick={action('Clicked')} onMouseOver={action('Hovered')} />;
+export const Default: FC = () => <Button />;
+
+export const Disabled: FC = () => <Button disabled />;

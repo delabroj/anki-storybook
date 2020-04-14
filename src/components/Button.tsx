@@ -1,14 +1,9 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
 interface ButtonProps {
-    onClick: () => void;
-    onMouseOver: () => void;
+    disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ onClick, onMouseOver }: ButtonProps) => (
-    <button onClick={onClick} onMouseOver={onMouseOver}>
-        Click Me!
-    </button>
-);
+const Button: FC<ButtonProps> = ({ disabled }: ButtonProps) => <button disabled={disabled}>Click Me!</button>;
 
 export default Button;
