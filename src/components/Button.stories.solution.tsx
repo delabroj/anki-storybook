@@ -1,14 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Button from './Button';
 
 export default {
     title: 'Button',
     component: Button,
+};
+
+export const Default = () => <Button />;
+Default.story = {
     parameters: {
-        notes: 'A button that can be disabled',
+        notes: 'Enabled button',
     },
 };
 
-export const Default: FC = () => <Button />;
-
-export const Disabled: FC = () => <Button disabled />;
+export const Disabled = () => <Button disabled />;
+Disabled.story = {
+    parameters: {
+        notes: 'Disabled button',
+    },
+};
