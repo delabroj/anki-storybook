@@ -1,21 +1,10 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import Button from './Button';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 export default {
     title: 'Button',
     component: Button,
-    decorators: [withKnobs],
 };
 
-const displayGroup = 'Display';
-const behaviorGroup = 'Behavior';
-
-export const Default: FC = () => (
-    <Button
-        onClick={() => alert('Clicked')}
-        label={text('label', 'Click me', displayGroup)}
-        toolTip={text('toolTip', 'Hovering', displayGroup)}
-        disabled={boolean('disabled', false, behaviorGroup)}
-    />
-);
+export const Default: FC = () => <Button onClick={action('Clicked')} onMouseOver={action('Hovered')} />;

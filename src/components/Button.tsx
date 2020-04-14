@@ -1,15 +1,13 @@
 import React, { FC, ReactNode } from 'react';
 
 interface ButtonProps {
-    label: string;
     onClick: () => void;
-    toolTip?: string;
-    disabled?: boolean;
+    onMouseOver: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ label, onClick, toolTip, disabled }: ButtonProps) => (
-    <button disabled={disabled} onClick={onClick} title={toolTip}>
-        {label}
+const Button: FC<ButtonProps> = ({ onClick, onMouseOver }: ButtonProps) => (
+    <button onClick={onClick} onMouseOver={onMouseOver}>
+        Click Me!
     </button>
 );
 
