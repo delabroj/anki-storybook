@@ -8,6 +8,14 @@ export default {
     decorators: [withKnobs],
 };
 
+const displayGroup = 'Display';
+const behaviorGroup = 'Behavior';
+
 export const Default: FC = () => (
-    <Button onClick={() => alert('Clicked')} label={text('label', 'Click me')} disabled={boolean('disabled', false)} />
+    <Button
+        onClick={() => alert('Clicked')}
+        label={text('label', 'Click me', displayGroup)}
+        toolTip={text('toolTip', 'Hovering', displayGroup)}
+        disabled={boolean('disabled', false, behaviorGroup)}
+    />
 );
